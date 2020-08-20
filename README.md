@@ -2,6 +2,8 @@
 
 A React anchor (link) component that will avoid rendering as a nested anchor.
 
+Can be used to avoid nesting with any component, so custom link components will work too.
+
 ## Installation
 
 ```sh
@@ -50,10 +52,11 @@ This will render:
 <a href="https://example.com" target="_bank">Oops, I nested a link: <span>here</span>.</a>
 ```
 
-Other than HTMLAnchorElement attributes, you can also provide these props:
+Other than HTMLAnchorElement attributes (or the props of whatever `component` is), you can also provide these props:
 
-* `alt`: An alternative component to use when rendered within a link. Defaults to `'span'`.
-* `anchorProps`: An object containing props that should *only* be applied when rendering as an anchor element.
+* `component`: The component to use when rendered normally. Defaults to `'a'`.
+* `alt`: An alternative component to use when rendered within a nested context. Defaults to `'span'`.
+* `anchorProps`: An object containing props that should *only* be applied when rendering normally.
 * `altProps`: An object containing props that should *only* be applied when rendering as the alternate component.
 
 The following top level props are automatically removed when rendering as the alternative component:
@@ -70,12 +73,14 @@ One last example showing all the props:
 ```jsx
 import React from 'react';
 import A from 'rcsa';
+import { NavLink } from 'example-nav-library';
 
 export default function MyComponent() {
   const link = 'https://example.com';
 
   return (
     <A
+      component={NavLink}
       href={link}
       target="_blank"
       alt="div"

@@ -3,8 +3,9 @@ import React, { useContext } from "react";
 import { AnchorCtx } from "./context.js";
 
 function ContextSensitiveAnchor(props) {
-  const { withinAnchor = false } = useContext(AnchorCtx);
+  const { nested = false } = useContext(AnchorCtx);
   const {
+    component: Component = "a",
     alt: Alt = "span",
     altProps,
     anchorProps,
@@ -12,7 +13,7 @@ function ContextSensitiveAnchor(props) {
     ...componentProps
   } = props;
 
-  if (withinAnchor) {
+  if (nested) {
     const {
       href,
       hreflang,
@@ -25,8 +26,8 @@ function ContextSensitiveAnchor(props) {
     return <Alt {...altComponentProps} {...altProps}>{children}</Alt>;
   } else {
     return (
-      <AnchorCtx.Provider value={{ withinAnchor: true }}>
-        <a {...componentProps} {...anchorProps}>{children}</a>
+      <AnchorCtx.Provider value={{ nested: true }}>
+        <Component {...componentProps} {...anchorProps}>{children}</Component>
       </AnchorCtx.Provider>
     );
   }

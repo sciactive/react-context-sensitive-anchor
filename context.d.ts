@@ -1,5 +1,5 @@
 export type AnchorContext = {
-  withinAnchor: boolean;
+  nested: boolean;
 };
 
 declare const AnchorCtx: React.Context<AnchorContext>;

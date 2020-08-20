@@ -1,11 +1,12 @@
 export interface Props<
-  T extends React.ComponentType = React.ComponentClass<"span">
-> extends Partial<React.ComponentPropsWithRef<"a">> {
-  alt?: T;
-  anchorProps?: React.ComponentPropsWithRef<"a">;
-  altProps?: React.ComponentPropsWithRef<T>;
+  C extends React.ComponentType = React.ComponentClass<"a">,
+  A extends React.ComponentType = React.ComponentClass<"span">
+> extends Partial<React.ClassAttributes<C>> {
+  component?: C;
+  alt?: A;
+  anchorProps?: React.ComponentPropsWithRef<C>;
+  altProps?: React.ComponentPropsWithRef<A>;
   children?: React.ReactNode;
-  [k: string]: any;
 }
 
 declare const ContextSensitiveAnchor: React.FunctionComponent<Props>;
