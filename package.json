@@ -1,0 +1,31 @@
+{
+  "name": "rcsa",
+  "version": "1.0.0-alpha.1",
+  "description": "A React anchor (link) component that will avoid rendering as a nested anchor.",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sciactive/react-context-sensitive-anchor.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "anchor",
+    "link",
+    "nested"
+  ],
+  "author": "Hunter Perrin <hperrin@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sciactive/react-context-sensitive-anchor/issues"
+  },
+  "homepage": "https://github.com/sciactive/react-context-sensitive-anchor#readme",
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "typescript": "^4.0.2"
+  }
+}
