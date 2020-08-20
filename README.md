@@ -54,9 +54,9 @@ This will render:
 
 Other than HTMLAnchorElement attributes (or the props of whatever `component` is), you can also provide these props:
 
-* `component`: The component to use when rendered normally. Defaults to `'a'`.
+* `component`: The primary component to use when rendered normally. Defaults to `'a'`.
 * `alt`: An alternative component to use when rendered within a nested context. Defaults to `'span'`.
-* `anchorProps`: An object containing props that should *only* be applied when rendering normally.
+* `primaryProps`: An object containing props that should *only* be applied when rendering as the primary component.
 * `altProps`: An object containing props that should *only* be applied when rendering as the alternate component.
 
 The following top level props are automatically removed when rendering as the alternative component:
@@ -84,7 +84,7 @@ export default function MyComponent() {
       href={link}
       target="_blank"
       alt="div"
-      anchorProps={{ className: 'link' }}
+      primaryProps={{ className: 'link' }}
       altProps={{ title: link, className: 'nested-link' }}
     >Example Link</A>
   );

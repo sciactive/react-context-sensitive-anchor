@@ -4,7 +4,7 @@ export interface Props<
 > extends Partial<React.ClassAttributes<C>> {
   component?: C;
   alt?: A;
-  anchorProps?: React.ComponentPropsWithRef<C>;
+  primaryProps?: React.ComponentPropsWithRef<C>;
   altProps?: React.ComponentPropsWithRef<A>;
   children?: React.ReactNode;
 }

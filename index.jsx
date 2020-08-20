@@ -8,7 +8,7 @@ function ContextSensitiveAnchor(props) {
     component: Component = "a",
     alt: Alt = "span",
     altProps,
-    anchorProps,
+    primaryProps,
     children = null,
     ...componentProps
   } = props;
@@ -27,7 +27,7 @@ function ContextSensitiveAnchor(props) {
   } else {
     return (
       <AnchorCtx.Provider value={{ nested: true }}>
-        <Component {...componentProps} {...anchorProps}>{children}</Component>
+        <Component {...componentProps} {...primaryProps}>{children}</Component>
       </AnchorCtx.Provider>
     );
   }
