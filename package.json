@@ -1,6 +1,6 @@
 {
   "name": "rcsa",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "A React anchor (link) component that will avoid rendering as a nested anchor. Can be used to avoid nesting with any component.",
   "main": "index.jsx",
   "scripts": {
